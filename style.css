@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #dadada;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.image {
+    width: 23%;
+    height: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 3px 3px 6px #2e2e2ed1;
+    cursor: pointer;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: .25s;
+}
+
+.image:hover img {
+    transform: scale(1.2);
+}
+
+/* Gallery */
+
+.gallery {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000000cd;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: .2s;
+}
+
+.gallery.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+.gallery__inner {
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+}
+
+.gallery__inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.control {
+    cursor: pointer;
+}
+
+.control.prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #fff;
+}
+
+.control.next {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #fff;
+}
+
+.control.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+/* Loading */
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: url(https://www.icegif.com/wp-content/uploads/loading-icegif.gif) no-repeat center/contain #191f26;
+}
